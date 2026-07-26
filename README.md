@@ -1,4 +1,4 @@
-﻿# Štip Marathon 2026 - Backend System (Phase 1)
+﻿# Štip Marathon 2026 - Backend System
 
 Welcome to the backend architecture of the **Štip Marathon 2026** web application. 
 This project is being developed using an iterative software engineering approach, 
