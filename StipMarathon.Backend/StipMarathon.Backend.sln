@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36705.20
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StipMarathon.Backend", "StipMarathon.Backend\StipMarathon.Backend.csproj", "{88F91D15-7B35-488B-861D-AF79D07E3100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StipMarathon.API", "StipMarathon.API\StipMarathon.API.csproj", "{BE7562A2-9A55-4387-B64B-B8C9C4B67B8E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{88F91D15-7B35-488B-861D-AF79D07E3100}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F91D15-7B35-488B-861D-AF79D07E3100}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F91D15-7B35-488B-861D-AF79D07E3100}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE7562A2-9A55-4387-B64B-B8C9C4B67B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE7562A2-9A55-4387-B64B-B8C9C4B67B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE7562A2-9A55-4387-B64B-B8C9C4B67B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE7562A2-9A55-4387-B64B-B8C9C4B67B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

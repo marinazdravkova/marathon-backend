@@ -6,51 +6,44 @@ starting from core OOP concepts and evolving into a full-scale enterprise Web AP
 
 ---
 
-## 🚀 The Development Philosophy (The Roadmap)
+## 🚀 Development Roadmap & Progress
 
-Instead of building a complex system all at once, this project is designed to show the natural evolution of a software product. 
-The backend is planned to progress through the following phases:
-
-Phase 1: Core Console Engine & JSON Database (Current) - Focuses on establishing object-oriented design, robust validation, and local data persistence.
-Phase 2: ASP.NET Core Web API - Migrating the business logic into RESTful endpoints to serve a frontend application (React/Next.js).
-Phase 3: Database & ORM Integration - Connecting the system to a relational database (SQL Server/MySQL) using Entity Framework Core.
-Phase 4: Security & Clean Architecture** - Implementing JWT Authentication, role-based access control, and refactoring into Layered/Clean Architecture.
+- [Done] **Phase 1: Core Console Engine & JSON Database** — Object-oriented domain models, robust validation, LINQ filtering, and local JSON persistence.
+- [Done] **Phase 2: ASP.NET Core Web API & CORS Integration** — RESTful controllers, HTTP status handling, Swagger documentation, and CORS configuration for React/Next.js frontend.
+- [ ] **Phase 3: Frontend Integration** — Connecting the C# Web API endpoints with the React user interface.
+- [ ] **Phase 4: Database & ORM Integration** — Migrating JSON storage to SQL Server / MySQL via Entity Framework Core (EF Core).
+- [ ] **Phase 5: Security & Clean Architecture** — JWT Authentication, role-based access control, and refactoring into Layered/Clean Architecture.
 
 ---
 
-## 🛠️ Phase 1: Core OOP & Memory Engine
+## 🛠️ Architecture & Features (Phase 1 & Phase 2)
 
-In this initial phase, the project establishes a rock-solid domain model and business logic layer using C# and .NET.
+### 🔹 Domain Logic & Persistence (`StipMarathon.Backend`)
+- Object-Oriented Design:Encapsulated domain models (`Runner`) with strict validations and null-safety.
+- Type Safety:Strong enums (`Category`) mapped to race distances (`Km5`, `Km10`, `Km21`).
+- LINQ Queries: High-performance filtering for runner registration lists and age restrictions.
+- JSON File Storage: Automated serialization and deserialization via `System.Text.Json`.
 
-### Key Technical Concepts Implemented:
-1. Object-Oriented Programming (OOP): Encapsulation of domain models (`Runner` class) with explicit properties and constructors.
-2. Type Safety & Enums: Used C# `Enum` (`Category`) with custom mappings to guarantee consistent category choices (`Km5`, `Km10`, `Km42`).
-3. LINQ & Collections: Implemented `List<Runner>` and utilized LINQ queries (`.Where()`, `.Any()`) for high-performance filtering (e.g., retrieving runners by category or identifying underage runners).
-4. Exception Handling (Robustness): Robust data validation throwing customized `ArgumentException` to prevent empty registrations or duplicate email entries.
-5. Data Persistence (JSON Database): Created a lightweight JSON file database (`System.Text.Json` serialization/deserialization) ensuring data is preserved even after the application stops.
-6. Null Safety: Handled nullable reference types cleanly using C# null-coalescing operators (`??`) to guarantee runtime stability.
-
----
-
-## 📂 Project Structure
-
-* `Runner.cs` - The core domain entity representing a marathon participant.
-* `Category.cs` (Enum) - Strongly-typed representation of racing distances.
-* `MarathonManager.cs` - The logic coordinator (Repository simulation) managing registrations, filtering, and JSON persistence.
-* `Program.cs` - Interactive command-line interface simulating client-server interactions.
+### 🔹 RESTful Web API (`StipMarathon.API`)
+- Controllers & Endpoints: Full CRUD operations exposed via HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
+- HTTP Standards: Implemented standard API responses (`200 OK`, `201 Created`, `400 Bad Request`, `404 Not Found`, `204 No Content`).
+- CORS Policy: Configured Cross-Origin Resource Sharing allowing seamless communication with React / Vite / Next.js clients.
+- OpenAPI / Swagger: Interactive API documentation for real-time testing.
 
 ---
 
-## 🔮 Future Roadmap (What's Next?)
+## 🌐 API Endpoints Reference
 
-The next steps for this repository include:
-1. Transition to ASP.NET Core: Expose endpoints such as `GET /api/runners` and `POST /api/runners` to communicate with the frontend.
-2. Entity Framework Core (EF Core): Map domain models to SQL tables and manage database schema migrations.
-3. React Frontend Connection: Connect the existing [marathon-app frontend](https://github.com/marinazdravkova/marathon-app) to this backend.
-4. Security: Secure admin routes using JWT Tokens so only authorized organizers can access participant information.
+| HTTP Method	|		Endpoint Path				     |			 Description											  |
+|	`GET`		|		`/api/runners`					 | Retrieves all registered marathon runners.						  |
+|	`GET`       |		`/api/runners/{id}`				 | Fetches detailed info for a specific runner by ID.				  |
+|	`GET`       |		`/api/runners/underage`			 | Filters and retrieves runners under 18 years old.				  |
+|	`GET`       |	`/api/runners/category/{category}`   | Filters runners by category (`Km5`, `Km10`, `Km21`).				  |
+|	`POST`      |		`/api/runners`					 | Registers a new runner (validates unique email & required fields). |
+|	`PUT`       |		`/api/runners/{id}`				 | Updates existing runner profile details.							  |
+|	`DELETE`    |		`/api/runners/{id}`				 | Cancels and removes a runner registration.						  |
 
 ---
-
 ### 💻 How to Run This Phase
 
 1. Clone this repository:

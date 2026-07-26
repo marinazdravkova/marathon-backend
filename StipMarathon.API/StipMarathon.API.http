@@ -1,0 +1,6 @@
+@StipMarathon.API_HostAddress = http://localhost:5200
+
+GET {{StipMarathon.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
